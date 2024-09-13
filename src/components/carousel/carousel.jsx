@@ -1,15 +1,8 @@
 import React, { useEffect } from "react"; 
-import carina from '../../img/Carina Nebula.webp';
-import f22 from '../../img/F22.jpeg';
-import galaxies from '../../img/Galaxies.jpg';
-import jupiter from '../../img/Jupiter.webp';
-import nasa from '../../img/Nasa.png';
 import { useState } from "react";
 import './carousel.css';
 import axios from "axios";
-
-// const pics = [carina, galaxies, jupiter, nasa, f22];
-
+import { Link } from "react-router-dom";
 
 function Carousel(){
     const [banners, setBanners] = useState([]);
@@ -52,7 +45,9 @@ function Carousel(){
             {banners.map(anime => (
                 (
                     <div key={anime}>
-                        <img src={anime.attributes.coverImage && anime.attributes.coverImage.large} alt="" style={{transform: `translateX(${order * -100}%)`}} className="Banner"/>
+                        <Link to = {`/anime/${anime.id}`}>
+                            <img src={anime.attributes.coverImage && anime.attributes.coverImage.large} alt="" style={{transform: `translateX(${order * -100}%)`}} className="Banner"/>
+                        </Link>
                     </div>
                 )
             ))}

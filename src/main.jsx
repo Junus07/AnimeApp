@@ -3,9 +3,12 @@
   import { BrowserRouter as Router } from 'react-router-dom'
   import App from './App.jsx'
   import './index.css'
+  import FavProvider from './context/favProvider.jsx'
 
   createRoot(document.getElementById('root')).render(
       <Router>
-        <App />
+        <FavProvider>
+          <App />
+        </FavProvider>
       </Router>
   )

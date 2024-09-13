@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../FetchAnime/FetchSeries.css'
+import { Link } from 'react-router-dom';
 
 const FetchManga = () => {
     const [data, setData] = useState([]);
@@ -45,12 +46,13 @@ const FetchManga = () => {
       {data.length > 0 ? (
         data.map((manga) => (
             <div className='series' key={manga.id}>
-              
+              <Link to={`/manga/${manga.id}`}>
                 <div className='seriesoverlay'>
                     <p className='seriestitle'>{manga.attributes.canonicalTitle}</p>
                     <p className='flavortext'>Click to see more</p>
                 <img className='seriesimg' src={manga.attributes.posterImage.original} alt={manga.attributes.canonicalTitle} />
                 </div>
+              </Link>
             </div>
         ))
       ) : (
@@ -60,4 +62,4 @@ const FetchManga = () => {
   );
 };
 
-export default FetchManga
+export default FetchManga;
