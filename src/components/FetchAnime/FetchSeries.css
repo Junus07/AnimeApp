@@ -1,0 +1,69 @@
+:root{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.seriescontainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5vh;
+    width: 80vw;
+    margin: 10vh auto 10vh 15vw;
+}
+
+.seriesimg{
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.seriesoverlay{
+    position: relative;
+    width: 250px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color:black;
+}
+
+.seriestitle, .flavortext{
+    font-size: 1.2em;
+    color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.seriestitle{
+    top: 20%;
+    left: 50%;
+    width:75%;
+    font-weight: bold;
+}
+
+.flavortext{
+    top: 85%;
+    left: 50%;
+    width: 75%;
+}
+
+.seriesimg:hover, .seriesoverlay:hover{
+    transform: scale(1.05);
+    transition: 0.25s ease;
+}
+
+.seriesimg:hover{
+    opacity: 0.2;
+}
+
+.seriestitle, .flavortext {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  
+  .series:hover .seriestitle, .series:hover .flavortext {
+    opacity: 1;
+  }
