@@ -1,0 +1,35 @@
+.noFavs{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    justify-content: center;
+    text-align: center;
+    position: absolute; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    font-size: 50px;
+    color: white;
+}
+
+.favToggle{
+    margin-top: 50px;
+    color: white;
+    border-color: white;
+}
+
+.favType{
+    color: white;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.favContainer{
+    width: 75vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.favSeries{
+    max-width: 200px;
+    margin-left: 50px;
+}
