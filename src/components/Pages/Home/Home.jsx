@@ -5,10 +5,12 @@ import "./home.css";
 
 const Home = () => {
   return (
-    <div className="carouselContainer">
-      <Carousel />
+    <div className="home-main">
+      <div className="carouselContainer">
+        <Carousel />
+      </div>
+      <Anime />
     </div>
-    <Anime />
   );
 };
 
