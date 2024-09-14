@@ -1,15 +1,15 @@
-.header{ 
-    display: flex;
-    align-items: center;
-    padding: 10px 10px;
-    gap: 7px;
-    font-size: 12px;
-    background-color: #343338;
-    color: #ffffff;
-    border-bottom: 1px solid #ffffff;
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  gap: 7px;
+  font-size: 12px;
+  background-color: #343338;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 
 .header__logo {
-   width: 30px;
-   height: 30px;
+  width: 30px;
+  height: 30px;
 }

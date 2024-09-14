@@ -1,60 +1,60 @@
-:root{
-    --footer-color: #343338;
-    --footer-text-color: #ffffff;
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --footer-color: #343338;
+  --footer-text-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.footer{
-    background-color: var(--footer-color);
-    color: var(--footer-text-color);
-    text-align: center;
-    padding: 10px;
-    font-size: 1em;
-    height:15vh;
-    gap:5vw;
+.footer {
+  background-color: var(--footer-color);
+  color: var(--footer-text-color);
+  text-align: center;
+  padding: 10px;
+  font-size: 1em;
+  height: 15vh;
+  gap: 5vw;
 
-    display:flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.footerlogocontainer{
-    display: flex;
-    gap: 10px;
-    align-items: center;
+.footerlogocontainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
-.footerlogo{
-    width: 50px;
-    height: 50px;
+.footerlogo {
+  width: 50px;
+  height: 50px;
 }
 
-.footerlist{
-    list-style: none;
-    display: flex;
-    gap: 3vw;
-    align-items: center;
+.footerlist {
+  list-style: none;
+  display: flex;
+  gap: 3vw;
+  align-items: center;
 }
 
-.footerlink{
-    text-decoration: none;
-    color: var(--footer-text-color);
-    cursor: pointer;
+.footerlink {
+  text-decoration: none;
+  color: var(--footer-text-color);
+  cursor: pointer;
 }
 
-.copyrightcontainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.copyrightcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    text-align: center;
-    font-size: 0.9em;
-    color: var(--footer-text-color);
-    width: 100%;
-    height: 10vh;
-    background-color: var(--footer-color);
-    border-top: 3px solid purple;
-    margin:0;
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--footer-text-color);
+  width: 100%;
+  height: 10vh;
+  background-color: var(--footer-color);
+  border-top: 3px solid purple;
+  margin: 0;
 }

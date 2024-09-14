@@ -1,116 +1,120 @@
 *,
 *::before,
-*::after{
-    box-sizing: border-box;
+*::after {
+  box-sizing: border-box;
 }
 
-.carousel{
-    position: relative;
-    width: 100%;
-    height: 100%;
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.Banner{
-    position: relative;
-    width: 100vw;
-    height: 40em;
-    flex-shrink: 0;
-    flex-grow: 0;
-    display: block;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+.Banner {
+  position: relative;
+  width: 100vw;
+  height: 40em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-.Banner:hover{
-    filter: brightness(0.5);
+.Banner:hover {
+  filter: brightness(0.5);
 }
 
-.mapContainer{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
+.mapContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
 }
 
-.prev, .next{
-    height: 98.9%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    font-size: 50px;
-    color: rgb(223, 223, 223);
-    cursor: pointer;
-    transition: 0.2s;
+.prev,
+.next {
+  height: 98.9%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 50px;
+  color: rgb(223, 223, 223);
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.prev:hover, .next:hover{
-    color: rgb(255, 255, 255);
-    background-color: rgba(66, 66, 66, 0.437);
+.prev:hover,
+.next:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(66, 66, 66, 0.437);
 }
 
-.prev{
-    padding-right: 5px;
-    left: 0;
+.prev {
+  padding-right: 5px;
+  left: 0;
 }
 
-.next{
-    padding-left: 5px;
-    right: 0;
+.next {
+  padding-left: 5px;
+  right: 0;
 }
 
-.imagePag{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    padding: 0.5em;
+.imagePag {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 0.5em;
 }
 
-.imageIndexButton, .activeIndexButton{
-    position: relative;
-    padding: 0.5em;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(198, 198, 198, 0.385);
-    cursor: pointer;
-    transition: 0.2s;
-    margin-left: 5px;
-    margin-right: 5px;
+.imageIndexButton,
+.activeIndexButton {
+  position: relative;
+  padding: 0.5em;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(198, 198, 198, 0.385);
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.activeIndexButton{
-    background-color: rgba(228, 228, 228, 0.761);
+.activeIndexButton {
+  background-color: rgba(228, 228, 228, 0.761);
 }
 
-.imageIndexButton:hover{
-    background-color: rgba(228, 228, 228, 0.761);
-}   
+.imageIndexButton:hover {
+  background-color: rgba(228, 228, 228, 0.761);
+}
 
 .BannerInfo {
-    position: absolute;
-    top: 10px;  
-    left: 20px; 
-    opacity: 0;
-    padding: 10px; 
-    border-radius: 5px; 
-    transition: opacity 0.3s ease-in-out; 
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  opacity: 0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.mapContainer:hover .BannerInfo{
-    opacity: 1;
+.mapContainer:hover .BannerInfo {
+  opacity: 1;
 }
 
-.BannerTitle, .BannerRating, .BannerEpisodes{
-    margin: 10px;
-    top: 0;
-    left: 0;
-    color: white;
-    font-size: 30px;
+.BannerTitle,
+.BannerRating,
+.BannerEpisodes {
+  margin: 10px;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 30px;
 }
 
-
-
-.BannerRating, .BannerEpisodes{
-    font-size: 20px;
+.BannerRating,
+.BannerEpisodes {
+  font-size: 20px;
 }
