@@ -1,8 +1,10 @@
 .header {
+  height: 15%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 10px;
-  gap: 7px;
+  text-align: center;
+  padding: 10px;
   font-size: 12px;
   background-color: #343338;
   color: #ffffff;
@@ -12,4 +14,8 @@
 .header__logo {
   width: 30px;
   height: 30px;
+}
+
+.sidebarcontainer {
+  margin-right:5vw;
 }

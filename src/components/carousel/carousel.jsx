@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import "./carousel.css";
+import "../../responsive.css"
 import axios from "axios";
 import { Link } from "react-router-dom";
 

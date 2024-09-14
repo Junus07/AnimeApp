@@ -1,10 +1,12 @@
-import React from "react";
-import "./Sidebar.css";
-import { NavLink } from "react-router-dom";
-import MenuIcon from '@mui/icons-material/Menu';
+import React, {useState} from "react"
+
+import SidebarMobile from "../mobile/SidebarMobile/SidebarMobile"
+import "./Sidebar.css"
+import { NavLink } from "react-router-dom"
+import { isMobile } from "react-device-detect"
+
 const Sidebar = () => {
-  return (
-    <>
+  return isMobile ? <SidebarMobile /> : (
       <div className="sidebar">
         <ul className="sidebar__list">
           <NavLink to="/" exact activeClassName="active">
@@ -24,11 +26,7 @@ const Sidebar = () => {
           </NavLink>
         </ul>
       </div>
-      <div className="hamburger">
-        <MenuIcon />
-      </div>
-    </>
   );
 };
 
-export default Sidebar;
+export default Sidebar
