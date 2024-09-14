@@ -1,25 +1,15 @@
-import React from 'react';
-import Header from '../../Header/Header';
-import Sidebar from '../../Sidebar/Sidebar';
-import Caruousel from '../../Pages/Home/Carousel/Caru';
+import React from "react";
+import Carousel from "../../carousel/carousel";
 import Anime from '../../../components/Pages/Home/Film Data/Anime'; 
-import './Home.css'; 
+import "./home.css";
 
 const Home = () => {
   return (
-    <div className='home-container'>
-      <Header />
-      <div className='home-content'>
-        <Sidebar />
-        <main className='home-main'>
-        <Caruousel />
-        <div className='Film_Data'>
-          <Anime/>
-        </div>
-        </main>
-      </div>
+    <div className="carouselContainer">
+      <Carousel />
     </div>
+    <Anime />
   );
-}
+};
 
 export default Home;

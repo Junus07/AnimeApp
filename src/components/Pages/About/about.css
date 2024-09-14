@@ -1,0 +1,30 @@
+.aboutPoster {
+  width: 250px;
+  position: relative;
+  margin-left: 150px;
+  margin-top: 20px;
+}
+
+.aboutTitle {
+  margin: 20px;
+  color: white;
+  position: relative;
+}
+
+.about {
+  text-align: left;
+  justify-content: center;
+  display: flex;
+}
+
+.aboutDescription {
+  width: 800px;
+  color: white;
+  margin: 20px;
+}
+
+.aboutContainer {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
