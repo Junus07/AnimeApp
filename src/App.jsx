@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./components/Pages/Home/Home";
-import FetchAnime from "./components/FetchAnime/FetchAnime.jsx";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Footer from "./components/Footer/Footer";
@@ -15,6 +14,8 @@ import AboutM from "./components/Pages/About/AboutM.jsx";
 const App = () => {
   return (
     <div>
+      <Header />
+      <Sidebar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/anime" element={<Anime />} />
