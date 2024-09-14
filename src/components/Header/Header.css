@@ -7,6 +7,10 @@
     background-color: #343338;
     color: #ffffff;
     border-bottom: 1px solid #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .header__logo {

@@ -1,0 +1,19 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .home-content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .home-main {
+    flex: 1;
+    margin-left: 120px; 
+    background-color: #343338;
+    overflow: auto; 
+  }
+  
+ 

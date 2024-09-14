@@ -1,0 +1,10 @@
+.caruosel{
+    text-align: center;
+    height: 40vh;
+    background-color: #424245;
+    border: solid 2px #ffffff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}       

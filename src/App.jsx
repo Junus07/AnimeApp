@@ -9,8 +9,6 @@ import Sidebar from './components/Sidebar/Sidebar';
 const App = () => {
   return (
     <div>
-      <Header />
-      <Sidebar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
