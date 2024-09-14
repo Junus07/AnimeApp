@@ -1,0 +1,63 @@
+.Anime {
+    text-align: center;
+  }
+  
+  .carousel {
+    width: 100%;
+    overflow-x: scroll; 
+    white-space: nowrap; 
+    padding: 20px;
+    scroll-behavior: smooth;
+    margin: 15px;
+  }
+  
+  .carousel__container {
+    display: flex;
+    gap: 15px; 
+  }
+  .carousel__item {
+    display: inline-block;
+    width: 150px; 
+  }
+  
+  .Anime__img {
+    width: 140px;
+    height: 200px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+
+  .Anime__img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .carousel__item p {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .carousel::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  .carousel::-webkit-scrollbar-track {
+    background: #343338;
+    border-radius: 5px;
+  }
+  
+  .carousel::-webkit-scrollbar-thumb {
+    background: #2c2b2b;
+    border-radius: 5px;
+  }
+  
+  .carousel::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  .carousel__item:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  

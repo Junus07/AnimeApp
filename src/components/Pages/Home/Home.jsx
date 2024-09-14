@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from "../../carousel/carousel";
+import Anime from '../../../components/Pages/Home/Film Data/Anime'; 
 import "./home.css";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div className="carouselContainer">
       <Carousel />
     </div>
+    <Anime />
   );
 };
 
