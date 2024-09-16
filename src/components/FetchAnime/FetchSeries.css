@@ -5,6 +5,7 @@
 }
 
 .seriescontainer {
+  min-height: 60vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5vh;
