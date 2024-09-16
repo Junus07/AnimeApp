@@ -1,4 +1,5 @@
 .sidebar {
+  z-index: 10;
   background-color: #343338;
   width: 120px;
   height: 100vh;
