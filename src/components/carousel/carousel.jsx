@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./carousel.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { CircularProgress } from "@mui/material";
 
 function Carousel() {
   const [banners, setBanners] = useState([]);
@@ -27,7 +28,7 @@ function Carousel() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <CircularProgress color="secondary" className="loader"/>
   }
 
   function Next() {

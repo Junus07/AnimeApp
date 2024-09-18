@@ -1,27 +1,52 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../FetchAnime/FetchSeries.css";
 import { Link } from "react-router-dom";
+import { SearchContext } from "../../context/searchContext";
+import { CircularProgress } from "@mui/material";
 
 const FetchManga = () => {
+  const { search, category, setSearch } = useContext(SearchContext);
   const [data, setData] = useState([]);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(20);
   const [mangaIds, setMangaIds] = useState(new Set());
+  const [debouncedSearchCategory, setDebouncedSearchCategory] = useState({search, category});
+
+  useEffect(() => {
+    setSearch("");
+  }, [setSearch]);
+
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearchCategory({search, category});
+      setOffset(0); 
+      setData([]); 
+      setMangaIds(new Set());
+    }, 500); 
+
+    return () => {
+      clearTimeout(handler); 
+    };
+  }, [search, category]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `https://kitsu.io/api/edge/manga?page[limit]=${limit}&page[offset]=${offset}`,
-        );
+        const url = debouncedSearchCategory.search
+        ? `https://kitsu.io/api/edge/manga?page[limit]=${limit}&page[offset]=${offset}&filter[text]=${debouncedSearchCategory.search}${
+          debouncedSearchCategory.category ? `&filter[categories]=${debouncedSearchCategory.category}` : ""}`
+
+        : `https://kitsu.io/api/edge/manga?page[limit]=${limit}&page[offset]=${offset}${
+          debouncedSearchCategory.category ? `&filter[categories]=${debouncedSearchCategory.category}` : ""}`;
+        const response = await fetch(url);
         const jsonData = await response.json();
         const newData = jsonData.data.filter(
           (manga) => !mangaIds.has(manga.id),
         );
         setData((prevData) => [...prevData, ...newData]);
         setMangaIds(
-          (prevIds) =>
-            new Set([...prevIds, ...newData.map((manga) => manga.id)]),
+          (prevIds) => new Set([...prevIds, ...newData.map((manga) => manga.id)]),
         );
         console.log(jsonData.data);
       } catch (error) {
@@ -30,7 +55,7 @@ const FetchManga = () => {
     };
 
     fetchData();
-  }, [offset]);
+  }, [offset, debouncedSearchCategory]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +63,7 @@ const FetchManga = () => {
       const documentHeight = document.body.offsetHeight;
 
       if (scrollPosition >= documentHeight) {
-        setOffset(offset + limit);
+        setOffset((prevOffset) => prevOffset + limit);
       }
     };
 
@@ -67,7 +92,7 @@ const FetchManga = () => {
           </div>
         ))
       ) : (
-        <div>Loading...</div>
+        <CircularProgress color="secondary" className="loader"/>
       )}
     </div>
   );
