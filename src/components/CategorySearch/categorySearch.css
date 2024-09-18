@@ -1,0 +1,21 @@
+.categoryContainer{
+    position: absolute;
+    left: 10%;
+    top: 6%;
+    padding: 10px;
+}
+
+.categorySearch{
+    position: absolute;
+    font-size: 16px;
+    padding: 10px;
+    width: 20vw;
+    color: white;
+    background-color: #343338;
+    border: 1px white solid;
+    border-radius: 5px;
+}
+
+.categorySearch:focus{
+    outline: none;
+}

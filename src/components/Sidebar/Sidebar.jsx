@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
+import { SearchContext } from "../../context/searchContext";
 const Sidebar = () => {
+
   return (
     <>
       <div className="sidebar">

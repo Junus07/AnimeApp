@@ -2,50 +2,54 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./FetchSeries.css";
 import { SearchContext } from "../../context/searchContext";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const FetchAnime = () => {
-  const { search } = useContext(SearchContext);
+  const { search, category, setSearch } = useContext(SearchContext);
   const [data, setData] = useState([]);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(20);
   const [animeIds, setAnimeIds] = useState(new Set());
-  const [debouncedSearch, setDebouncedSearch] = useState(search);
+  const [debouncedSearchCategory, setDebouncedSearchCategory] = useState({search, category});
 
-  // Debounce search input
+  useEffect(() => {
+    setSearch("");
+  }, [setSearch]);
+
   useEffect(() => {
     const handler = setTimeout(() => {
-      setDebouncedSearch(search);
-      setOffset(0); // Reset offset when new search is triggered
-      setData([]); // Clear previous results
-      setAnimeIds(new Set()); // Clear previous IDs
-    }, 500); // 500ms debounce
+      setDebouncedSearchCategory({search, category});
+      setOffset(0); 
+      setData([]); 
+      setAnimeIds(new Set());
+    }, 500); 
 
     return () => {
-      clearTimeout(handler); // Clear the timeout if search changes quickly
+      clearTimeout(handler); 
     };
-  }, [search]);
+  }, [search, category]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = `https://kitsu.io/api/edge/anime?page[limit]=${limit}&page[offset]=${offset}&filter[text]=${debouncedSearch}`;
+        const url = `https://kitsu.io/api/edge/anime?page[limit]=${limit}&page[offset]=${offset}&filter[text]=${debouncedSearchCategory.search}${
+          debouncedSearchCategory.category ? `&filter[categories]=${debouncedSearchCategory.category}` : ""
+        }`;
+    
         const response = await fetch(url);
         const jsonData = await response.json();
-        const newData = jsonData.data.filter(
-          (anime) => !animeIds.has(anime.id)
-        );
+        const newData = jsonData.data.filter((anime) => !animeIds.has(anime.id));
+    
         setData((prevData) => [...prevData, ...newData]);
-        setAnimeIds(
-          (prevIds) => new Set([...prevIds, ...newData.map((anime) => anime.id)])
-        );
-        console.log(jsonData.data);
+        setAnimeIds((prevIds) => new Set([...prevIds, ...newData.map((anime) => anime.id)]));
+        console.log("Fetched Data:", jsonData.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, [offset, debouncedSearch]);
+  }, [offset, debouncedSearchCategory]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +57,7 @@ const FetchAnime = () => {
       const documentHeight = document.body.offsetHeight;
 
       if (scrollPosition >= documentHeight) {
-        setOffset(offset + limit);
+        setOffset((prevOffset) => prevOffset + limit);
       }
     };
 
@@ -63,21 +67,14 @@ const FetchAnime = () => {
     };
   }, [offset, limit]);
 
-  const filteredData = data.filter((anime) =>
-    anime.attributes.canonicalTitle.toLowerCase().includes(search.toLowerCase())
-  );
-
   return (
-    <div>
       <div className="seriescontainer">
-        {filteredData.length > 0 ? (
-          filteredData.map((anime) => (
+        {data.length > 0 ? (
+          data.map((anime) => (
             <div className="series" key={anime.id}>
               <Link to={`/anime/${anime.id}`}>
                 <div className="seriesoverlay">
-                  <p className="seriestitle">
-                    {anime.attributes.canonicalTitle}
-                  </p>
+                  <p className="seriestitle">{anime.attributes.canonicalTitle}</p>
                   <p className="flavortext">Click to see more</p>
                   <img
                     className="seriesimg"
@@ -89,10 +86,9 @@ const FetchAnime = () => {
             </div>
           ))
         ) : (
-          <div>Loading...</div>
+          <CircularProgress color="secondary" className="loader"/>
         )}
       </div>
-    </div>
   );
 };
 
