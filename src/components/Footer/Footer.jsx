@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../../img/logo2.png";
 
 import "./Footer.css";
 
@@ -9,7 +10,7 @@ const Footer = () => {
       <div className="footer">
         <div className="footerlogocontainer">
           <NavLink to="/" className="footerlink" activeClassName="active">
-            <img className="footerlogo" src="src/img/logo2.png" alt="" />
+            <img className="footerlogo" src={logo} alt="" />
           </NavLink>
           <h1>AnimeApp</h1>
         </div>
