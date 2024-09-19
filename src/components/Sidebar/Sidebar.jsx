@@ -18,7 +18,7 @@ const Sidebar = () => {
           <NavLink to="/manga" activeClassName="active">
             <li>Manga</li>
           </NavLink>
-          <NavLink to="/about" activeClassName="active">
+          <NavLink to="/aboutus" activeClassName="active">
             <li>About Us</li>
           </NavLink>
           <NavLink to="/favourites" activeClassName="active">

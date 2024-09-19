@@ -1,0 +1,14 @@
+.about-us-container {
+    width: 85vw;
+    margin: 10vh 10vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+  }
