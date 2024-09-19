@@ -23,7 +23,7 @@ const Footer = () => {
           <NavLink to="/manga" className="footerlink" activeClassName="active">
             <li>Manga</li>
           </NavLink>
-          <NavLink to="/about" className="footerlink" activeClassName="active">
+          <NavLink to="/aboutus" className="footerlink" activeClassName="active">
             <li>About Us</li>
           </NavLink>
         </ul>

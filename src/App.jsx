@@ -10,6 +10,7 @@ import Manga from "./components/Pages/Manga/Manga.jsx";
 import Favourites from "./components/Pages/Favourites/favourites.jsx";
 import AboutA from "./components/Pages/About/AboutA.jsx";
 import AboutM from "./components/Pages/About/AboutM.jsx";
+import AboutUsPage from "./components/Pages/AboutUsPage/AboutUsPage.jsx";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/anime" element={<Anime />} />
         <Route path="/manga" element={<Manga />} />
         <Route path="/favourites" element={<Favourites />} />
+        <Route path="/aboutus" element={<AboutUsPage />} />
         <Route path="/anime/:id" element={<AboutA />} />
         <Route path="/manga/:id" element={<AboutM />} />
       </Routes>
